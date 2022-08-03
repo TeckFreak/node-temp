@@ -1,0 +1,100 @@
+const a = 10
+const b = 5
+
+function add () {
+    console.log(`The sum is ${a+b}`)
+}
+const printStar = (num)=>{
+    for(i=1;i<=num;i++){
+      for(j=1;j<=i;j++){
+        process.stdout.write("*");
+      }
+      console.log(``)
+    }
+}
+
+function printPyramid(num){
+    for(i=1;i<=num;i++){
+        for(j=i;j<num;j++){
+            process.stdout.write(" ");
+          }
+      for(j=1;j<=i;j++){
+        process.stdout.write("*");
+      }
+      for(j=1;j<i;j++){
+        process.stdout.write("*");
+      }
+      console.log(``)
+    }
+}
+
+function funny (num){
+
+    var minLine = 0
+    var maxLine = 0
+    if( num>5){
+        minLine = num/2
+        maxLine = minLine+num/4
+    }
+
+    var x = num
+    for(i=num-2;i<x;i++){
+        for(j=1;j<=num;j++){
+            process.stdout.write(" ");
+          }
+      for(j=5;j<=i;j++){
+      
+        process.stdout.write("*");
+      }
+      for(j=1;j<i;j++){
+        process.stdout.write("*");
+      }
+      console.log(``)
+    }
+
+
+    for(i=1;i<=num;i++){
+        for(j=i;j<num;j++){
+            process.stdout.write(" ");
+          }
+     
+      for(j=1;j<i;j++){
+        process.stdout.write("*");
+      }
+
+      for(j=i;j<num;j++){
+        process.stdout.write("*");
+      }
+
+      // new lines
+      if(i>0 && i>=minLine && i<=maxLine){
+        // for(k = 1;k<=numLines;k++){
+        //     process.stdout.write("**");
+        // }
+        for(j=1;j<i;j++){
+            process.stdout.write("*");
+          }
+          for(j=1;j<i;j++){
+            process.stdout.write("*");
+          }
+      }else{
+        for(j=1;j<i;j++){
+            process.stdout.write(" ");
+          }
+          for(j=1;j<i;j++){
+            process.stdout.write(" ");
+          }
+         
+      }
+
+      for(j=1;j<num;j++){
+        process.stdout.write("*");
+      }
+      console.log(``)
+    }
+}
+
+//module.exports.printStar = printStar
+//module.exports.printPyramid = printPyramid
+module.exports.funny = funny
+
